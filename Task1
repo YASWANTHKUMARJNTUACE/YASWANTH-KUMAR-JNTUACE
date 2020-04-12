@@ -1,0 +1,78 @@
+/*Task :
+- Create a Method that single can perform all mathematical operations like
+	add, sub, mul, div
+	Method(a,b,..)   add, sub, mul
+  you can pass parameter and operation type so that it will perform that operation on those parameters.
+    Method(10,20, add) { } 
+*/
+
+class Calculations {
+    public Print(a:number,b:number):void {
+        console.log(`a=${a}\n b=${b}`);
+    }
+}
+class Sum extends Calculations {
+    public Print(a:number,b:number):void {
+            super.Print(a,b)
+           console.log(`Sum is ${a+b}`);
+        }
+}
+class Mul extends Calculations {
+    public Print(a:number,b:number):void {
+        super.Print(a,b)
+        console.log(`Multiplication is ${a*b}`)
+    }
+}
+class Div extends Calculations {
+    public Print(a,b):void {
+        super.Print(a,b)
+        console.log(`Div is ${a/b}`);
+    }
+}
+class Sub extends Calculations {
+    public Print(a,b):void {
+        super.Print(a,b)
+       console.log(`Sub is ${a-b}`);
+    }
+}
+let cal:Calculations[]=[];
+cal[0]=new Sum();
+cal[1]=new Mul();
+cal[2]=new Div();
+cal[3]=new Sub();
+console.log('----Individual Calculations----');
+console.log('----SUM----');
+cal[0].Print(30,40); 
+console.log('----MUL----');
+cal[1].Print(20,60);
+console.log('----DIV----');
+cal[2].Print(52,26);
+console.log('----SUB----');
+cal[3].Print(156465,65465);
+
+console.log('-----------------------------------');
+
+for(var calculate of cal) {
+    calculate.Print(45,45); 
+}
+
+/*Task : 
+- Create a method that can accept parameters
+	Method() { printing value }
+	Method(a, b) { addition of values } 
+*/
+
+class cal1 {
+    Value1:number=10;
+    value2:number=20;
+    sum1():void {
+        console.log(`Sum is ${this.Value1+this.value2}`);
+    }
+    multical(a:number,b:number):void {
+            console.log(`SUM=${a+b}`);
+        }
+    }
+let obj=new cal1();
+obj.sum1();
+console.log('------------------');
+obj.multical(567,552);
